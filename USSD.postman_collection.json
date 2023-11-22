@@ -1,0 +1,188 @@
+{
+	"info": {
+		"_postman_id": "21371e30-982e-46a2-b151-65db5ab1a5c2",
+		"name": "USSD",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16769378",
+		"_collection_link": "https://speeding-zodiac-31015.postman.co/workspace/8d589fca-5eb5-432f-86ba-b803fc50069c/collection/16769378-21371e30-982e-46a2-b151-65db5ab1a5c2?action=share&creator=16769378&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "ft (make payment)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n     \"body\":\r\n     {\r\n         \"transactionType\":\"ACIB\",\r\n         \"debitAccountId\":\"1000000196316\",\r\n         \"creditAccountId\":\"1000000019066\",\r\n         \"creditCurrency\":\"ETB\",\r\n         \"creditAmount\":1,\r\n         \"paymentDetails\":[]\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://10.10.0.46:8888/tc-channels-internal-api/api/v1.0.0/myPayments?validate_only=true",
+					"protocol": "http",
+					"host": [
+						"10",
+						"10",
+						"0",
+						"46"
+					],
+					"port": "8888",
+					"path": [
+						"tc-channels-internal-api",
+						"api",
+						"v1.0.0",
+						"myPayments"
+					],
+					"query": [
+						{
+							"key": "validate_only",
+							"value": "true"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "transactions list",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "credentials",
+						"value": "",
+						"type": "default",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "http://10.10.0.46:8888/tc-channels-internal-api/api/v1.0.0/transactions?transactionCount=10&accountId=1000000196316&listType=RECENT",
+					"protocol": "http",
+					"host": [
+						"10",
+						"10",
+						"0",
+						"46"
+					],
+					"port": "8888",
+					"path": [
+						"tc-channels-internal-api",
+						"api",
+						"v1.0.0",
+						"transactions"
+					],
+					"query": [
+						{
+							"key": "transactionCount",
+							"value": "10"
+						},
+						{
+							"key": "accountId",
+							"value": "1000000196316"
+						},
+						{
+							"key": "listType",
+							"value": "RECENT"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "account info",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://10.10.0.46:8888/tc-channels-internal-api/api/v1.0.0//getAccountList/1000000196316",
+					"protocol": "http",
+					"host": [
+						"10",
+						"10",
+						"0",
+						"46"
+					],
+					"port": "8888",
+					"path": [
+						"tc-channels-internal-api",
+						"api",
+						"v1.0.0",
+						"",
+						"getAccountList",
+						"1000000196316"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get customer Information",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://10.10.0.46:8888/tc-channels-internal-api/api/v1.0.0/getCustomerInformation/customer?customerId=1000034086",
+					"protocol": "http",
+					"host": [
+						"10",
+						"10",
+						"0",
+						"46"
+					],
+					"port": "8888",
+					"path": [
+						"tc-channels-internal-api",
+						"api",
+						"v1.0.0",
+						"getCustomerInformation",
+						"customer"
+					],
+					"query": [
+						{
+							"key": "customerId",
+							"value": "1000034086"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "transactional accounts",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://10.10.0.46:8888/tc-channels-internal-api/api/v1.0.0/holdings/transactionalAccounts?customerId=1000034086",
+					"protocol": "http",
+					"host": [
+						"10",
+						"10",
+						"0",
+						"46"
+					],
+					"port": "8888",
+					"path": [
+						"tc-channels-internal-api",
+						"api",
+						"v1.0.0",
+						"holdings",
+						"transactionalAccounts"
+					],
+					"query": [
+						{
+							"key": "customerId",
+							"value": "1000034086"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

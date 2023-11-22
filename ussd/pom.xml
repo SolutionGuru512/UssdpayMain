@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.3.8.RELEASE</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
+	<groupId>ussd</groupId>
+	<artifactId>ussd</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
+	<name>ussd</name>
+	<description>Demo project for Spring Boot</description>
+	<properties>
+		<java.version>1.8</java.version>
+	</properties>
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter</artifactId>
+			<exclusions>
+				<exclusion>
+					<groupId>org.springframework.boot</groupId>
+					<artifactId>spring-boot-starter-logging</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>ch.qos.logback</groupId>
+					<artifactId>logback-classic</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+			<exclusions>
+				<!-- -->
+				<exclusion>
+					<groupId>org.springframework.boot</groupId>
+					<artifactId>spring-boot-starter-tomcat</artifactId>
+				</exclusion>
+				<!-- -->
+				<exclusion>
+					<groupId>org.springframework.boot</groupId>
+					<artifactId>spring-boot-starter-logging</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>ch.qos.logback</groupId>
+					<artifactId>logback-classic</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-redis</artifactId>
+			<version>2.7.6</version>
+		</dependency>
+<!--		<dependency>-->
+<!--			<groupId>org.springframework.boot</groupId>-->
+<!--			<artifactId>spring-boot-devtools</artifactId>-->
+<!--			<version>3.0.0</version>-->
+<!--			<optional>true</optional>-->
+<!--			<exclusions>-->
+<!--				<exclusion>-->
+<!--					<groupId>org.springframework.boot</groupId>-->
+<!--					<artifactId>spring-boot-starter-logging</artifactId>-->
+<!--				</exclusion>-->
+<!--				<exclusion>-->
+<!--					<groupId>ch.qos.logback</groupId>-->
+<!--					<artifactId>logback-classic</artifactId>-->
+<!--				</exclusion>-->
+<!--			</exclusions>-->
+<!--		</dependency>-->
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<optional>true</optional>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-text</artifactId>
+			<version>1.10.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>3.11</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.projectreactor</groupId>
+			<artifactId>reactor-spring</artifactId>
+			<version>1.0.1.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>4.0.0</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-log4j2</artifactId>
+			<version>3.0.0</version>
+		</dependency>
+<!--		<dependency>-->
+<!--			<groupId>io.swagger</groupId>-->
+<!--			<artifactId>api-client</artifactId>-->
+<!--			<version>0.0.1</version>-->
+<!--			<scope>compile</scope>-->
+<!--		</dependency>-->
+		<dependency>
+			<groupId>io.swagger</groupId>
+			<artifactId>swagger-annotations</artifactId>
+			<version>1.6.9</version>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.dataformat</groupId>
+			<artifactId>jackson-dataformat-xml</artifactId>
+			<version>2.9.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-webflux</artifactId>
+			<version>3.0.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-reactor-netty</artifactId>
+			<version>2.7.6</version>
+		</dependency>
+		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+			<version>20.0</version>
+		</dependency>
+		<dependency>
+			<!-- JSON Web Token Support -->
+			<groupId>io.jsonwebtoken</groupId>
+			<artifactId>jjwt</artifactId>
+			<version>0.9.1</version>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<finalName>ussd</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+<!--			<plugin>-->
+<!--				<groupId>com.github.wvengen</groupId>-->
+<!--				<artifactId>proguard-maven-plugin</artifactId>-->
+<!--				<version>2.5.1</version>-->
+<!--				<executions>-->
+<!--					<execution>-->
+<!--						<phase>package</phase>-->
+<!--						<goals>-->
+<!--							<goal>proguard</goal>-->
+<!--						</goals>-->
+<!--					</execution>-->
+<!--				</executions>-->
+
+<!--				<configuration>-->
+<!--					<proguardVersion>7.0.1</proguardVersion>-->
+<!--					<injar>${project.build.finalName}/WEB-INF/classes</injar>-->
+<!--					&lt;!&ndash;					<injar>${project.build.finalName}/WEB-INF/classes</injar>&ndash;&gt;-->
+<!--					<outjar>classes</outjar>-->
+<!--					<obfuscate>true</obfuscate>-->
+<!--					<options>-->
+<!--						<option>-allowaccessmodification</option>-->
+<!--						<option>-dontshrink</option>-->
+<!--						<option>-dontoptimize</option>-->
+<!--						<option>-dontpreverify</option>-->
+<!--						<option>-dontnote</option>-->
+<!--						<option>-dontwarn</option>-->
+<!--						<option>-adaptclassstrings</option>-->
+<!--&lt;!&ndash;												<option>-keepattributes&ndash;&gt;-->
+<!--&lt;!&ndash;													Exceptions,&ndash;&gt;-->
+<!--&lt;!&ndash;													InnerClasses,&ndash;&gt;-->
+<!--&lt;!&ndash;													Signature,&ndash;&gt;-->
+<!--&lt;!&ndash;													Deprecated,&ndash;&gt;-->
+<!--&lt;!&ndash;													SourceFile,&ndash;&gt;-->
+<!--&lt;!&ndash;													LineNumberTable,&ndash;&gt;-->
+<!--&lt;!&ndash;													*Annotation*,&ndash;&gt;-->
+<!--&lt;!&ndash;													EnclosingMethod&ndash;&gt;-->
+<!--&lt;!&ndash;												</option>&ndash;&gt;-->
+<!--						&lt;!&ndash;						<option>-keepnames interface **</option>&ndash;&gt;-->
+<!--						<option>-keepnames class com.bank.ussd.handlers.**</option>-->
+<!--						&lt;!&ndash;						<option>-keepnames class com.bank.ussd.corebankapi.**</option>&ndash;&gt;-->
+<!--						<option>-keepnames class * extends SpringBootServletInitializer</option>-->
+<!--						&lt;!&ndash;						<option>-keepparameternames</option>&ndash;&gt;-->
+<!--						<option>-keep-->
+<!--							class com.bank.ussd.UssdApplication {-->
+<!--							public static-->
+<!--							void main(java.lang.String[]);-->
+<!--							}-->
+<!--						</option>-->
+<!--						<option>-ignorewarnings</option>-->
+<!--						&lt;!&ndash;						<option>-keep interface * extends * { *; }</option>&ndash;&gt;-->
+<!--						<option>-keep class com.fasterxml.jackson.** { *; }</option>-->
+<!--						<option>-keep class org.springframework.** { *; }</option>-->
+<!--						<option>-keep class org.json.JSONObject.** {**-->
+<!--							put(java.lang.String,java.util.Map);}</option>-->
+<!--						<option>-keepclassmembers class * {-->
+<!--							@org.springframework.context.annotation.Bean *;-->
+<!--							@org.springframework.beans.factory.annotation.Autowired *;-->
+<!--							@org.springframework.beans.factory.annotation.Value *;-->
+<!--							}-->
+<!--						</option>-->
+<!--						<option>-dontwarn com.fasterxml.jackson.databind.**</option>-->
+<!--						<option>-dontwarn com.fasterxml.jackson.**</option>-->
+<!--					</options>-->
+<!--					<injarNotExistsSkip>true</injarNotExistsSkip>-->
+<!--					<libs>-->
+<!--						<lib>${java.home}/lib/rt.jar</lib>-->
+<!--					</libs>-->
+<!--				</configuration>-->
+<!--				<dependencies>-->
+<!--					<dependency>-->
+<!--						<groupId>com.guardsquare</groupId>-->
+<!--						<artifactId>proguard-base</artifactId>-->
+<!--						<version>7.0.1</version>-->
+<!--					</dependency>-->
+<!--				</dependencies>-->
+<!--			</plugin>-->
+		</plugins>
+	</build>
+
+</project>

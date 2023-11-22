@@ -1,0 +1,1366 @@
+{
+    "START": {
+        "id": 230,
+        "menu_level": "START",
+        "type" : "dynamic",
+        "handler": "loginMenuHandler",
+        "next_menu_level": "MAIN"
+    },
+
+    "START_AO": {
+        "id": 230,
+        "menu_level": "START_AO",
+        "type" : "dynamic",
+        "handler": "loginMenuHandler_AO",
+        "next_menu_level": "MAIN_AO"
+    },
+    "START_AM": {
+        "id": 230,
+        "menu_level": "START_AM",
+        "type" : "dynamic",
+        "handler": "loginMenuHandler_AM",
+        "next_menu_level": "MAIN_AM"
+    },
+    "SET_PIN" :{
+        "id": 20,
+        "menu_level": "SET_PIN",
+        "type": "input",
+        "variable": "new_pin",
+        "text": "CON Set PIN\nPlease enter a new PIN",
+        "next_menu_level": "SET_PIN_CONFORMATION",
+        "validation": "^(\\d{4})$",
+        "validation_error": "Set PIN\nPlease enter a valid PIN (4 digits)",
+        "previous_menu_level": "START"
+    },
+    "SET_PIN_CONFORMATION" :{
+        "id": 20,
+        "menu_level": "SET_PIN_CONFORMATION",
+        "type": "input",
+        "variable": "conformation_pin",
+        "text": "CON Please enter a Conformation PIN",
+        "next_menu_level": "SET_PIN_PROCESS",
+        "validation": "^(\\d{4})$",
+        "validation_error": "Set PIN\nPlease enter a valid Conformation PIN (4 digits)",
+        "previous_menu_level": "SET_PIN"
+    },
+    "SET_PIN_CONFORMATION_AO" :{
+        "id": 20,
+        "menu_level": "SET_PIN_CONFORMATION_AO",
+        "type": "input",
+        "variable": "conformation_pin",
+        "text": "CON Mirkaneessa lakkoofsa iccitii galchaa",
+        "next_menu_level": "SET_PIN_PROCESS_AO",
+        "validation": "^(\\d{4})$",
+        "validation_error": "Mirkaneessa lakkoofsa iccitii sirrii ta'e galchaa",
+        "previous_menu_level": "SET_PIN_AO"
+    },
+    "SET_PIN_CONFORMATION_AM" :{
+        "id": 20,
+        "menu_level": "SET_PIN_CONFORMATION_AM",
+        "type": "input",
+        "variable": "conformation_pin",
+        "text": "CON እባክዎ የሚስጥር ቁጥር ማረጋገጫን ያስገቡ",
+        "next_menu_level": "SET_PIN_PROCESS_AM",
+        "validation": "^(\\d{4})$",
+        "validation_error": "እባክዎ ትክክለኛ የሚስጥር ቁጥር ማረጋገጫን ያስገቡ",
+        "previous_menu_level": "SET_PIN_AM"
+    },
+    "SET_PIN_AO" :{
+        "id": 20,
+        "menu_level": "SET_PIN_AO",
+        "type": "input",
+        "variable": "new_pin",
+        "text": "CON Lakk.Icciitii galchaa\nLakk.Icciitii Keessan isa haaraa galchaa",
+        "next_menu_level": "SET_PIN_CONFORMATION_AO",
+        "validation": "^(\\d{4})$",
+        "validation_error": "Lakk.Icciitii galchaa\nLakk.Icciitii sirrii ta'e galchaa( Dijiiti 4) ",
+        "previous_menu_level": "START_AO"
+    },
+    "SET_PIN_AM" :{
+        "id": 20,
+        "menu_level": "SET_PIN_AM",
+        "type": "input",
+        "variable": "new_pin",
+        "text": "CON የሚስጥር ቁጥርዎን ያስገቡ\nእባክዎ አዲሱን የሚስጥር ቁጥርዎን ያስገቡ",
+        "next_menu_level": "SET_PIN_CONFORMATION_AM",
+        "validation": "^(\\d{4})$",
+        "validation_error": "የሚስጥር ቁጥርዎን ያስገቡ\nእባክዎ ትክክለኛ የሚስጥር ቁጥርዎን ያስገቡ",
+        "previous_menu_level": "START_AM"
+    },
+
+    "SET_PIN_PROCESS": {
+        "id": 230,
+        "menu_level": "SET_PIN_PROCESS",
+        "text": "CON Your PIN has been set.\nPress 1 to continue.",
+        "next_menu_level": "MAIN",
+        "type": "dynamic",
+        "handler": "setPinProcessMenuHandler",
+        "previous_menu_level": "MAIN"
+    },
+    "SET_PIN_PROCESS_AO": {
+        "id": 230,
+        "menu_level": "SET_PIN_PROCESS_AO",
+        "text": "CON Lakk.Icciitii keessan Galeera \nItti fufuuf lakkoofsa 1 tuqi.",
+        "next_menu_level": "MAIN_AO",
+        "type": "dynamic",
+        "handler": "setPinProcessMenuHandler_AO",
+        "previous_menu_level": "MAIN_AO"
+    },
+    "SET_PIN_PROCESS_AM": {
+        "id": 230,
+        "menu_level": "SET_PIN_PROCESS_AM",
+        "text": "CON የሚስጥር ቁጥርዎ ገብቷል\nለመቀጠል 1 ቁጥርን ይጫኑ",
+        "next_menu_level": "MAIN_AO",
+        "type": "dynamic",
+        "handler": "setPinProcessMenuHandler_AM",
+        "previous_menu_level": "MAIN_AM"
+    },
+    "RESET_PIN" :{
+        "id": 20,
+        "menu_level": "RESET_PIN",
+        "type": "input",
+        "variable": "new_pin",
+        "text": "CON Reset PIN\nPlease enter a new PIN",
+        "next_menu_level": "RESET_PIN_CONFORMATION",
+        "validation": "^(\\d{4})$",
+        "validation_error": "Reset PIN\nPlease enter a valid PIN",
+        "previous_menu_level": "START"
+    },
+    "RESET_PIN_CONFORMATION" :{
+        "id": 20,
+        "menu_level": "RESET_PIN_CONFORMATION",
+        "type": "input",
+        "variable": "conformation_pin",
+        "text": "CON Reset PIN\nPlease enter a Confirmation PIN",
+        "next_menu_level": "RESET_PIN_PROCESS",
+        "validation": "^(\\d{4})$",
+        "validation_error": "Reset PIN\nPlease enter a valid Confirmation PIN",
+        "previous_menu_level": "START"
+    },
+    "RESET_PIN_CONFORMATION_AO" :{
+        "id": 20,
+        "menu_level": "RESET_PIN_CONFORMATION_AO",
+        "type": "input",
+        "variable": "conformation_pin",
+        "text": "CON Mirkaneessa lakkoofsa iccitii galchaa",
+        "next_menu_level": "RESET_PIN_PROCESS_AO",
+        "validation": "^(\\d{4})$",
+        "validation_error": "Mirkaneessa lakkoofsa iccitii sirrii ta'e galchaa",
+        "previous_menu_level": "START_AO"
+    },
+    "RESET_PIN_CONFORMATION_AM" :{
+        "id": 20,
+        "menu_level": "RESET_PIN_CONFORMATION_AM",
+        "type": "input",
+        "variable": "conformation_pin",
+        "text": "CON እባክዎ የሚስጥር ቁጥር ማረጋገጫን ያስገቡ",
+        "next_menu_level": "RESET_PIN_PROCESS_AM",
+        "validation": "^(\\d{4})$",
+        "validation_error": "እባክዎ ትክክለኛ የሚስጥር ቁጥር ማረጋገጫን ያስገቡ\n",
+        "previous_menu_level": "START_AM"
+    },
+    "RESET_PIN_AO" :{
+        "id": 20,
+        "menu_level": "RESET_PIN_AO",
+        "type": "input",
+        "variable": "new_pin",
+        "text": "CON Lakkofsa iccitii  irra deebi'uun Galchaa\nLakkoofsa Iccitii Keessan  isa haara galchaa",
+        "next_menu_level": "RESET_PIN_CONFORMATION_AO",
+        "validation": "^(\\d{4})$",
+        "validation_error": "Lakkofsa iccitii irra deebi'uun Galchaa\nLakkoofsa iccitii sirrii ta'e galchaa(Dijiiti 4)",
+        "previous_menu_level": "START_AO"
+    },
+    "RESET_PIN_AM" :{
+        "id": 20,
+        "menu_level": "RESET_PIN_AM",
+        "type": "input",
+        "variable": "new_pin",
+        "text": "CON የሚስጥር ቁጥርዎን በድጋሚ ያስገቡ\nእባክዎ አዲሱን የሚስጥር ቁጥርዎን ያስገቡ",
+        "next_menu_level": "RESET_PIN_CONFORMATION_AM",
+        "validation": "^(\\d{4})$",
+        "validation_error": "የሚስጥር ቁጥርዎን ያስገቡ\nእባክዎ ትክክለኛ የሚስጥር ቁጥርዎን ያስገቡ (4 አኃዝ)",
+        "previous_menu_level": "START_AM"
+    },
+    "RESET_PIN_PROCESS": {
+        "id": 230,
+        "menu_level": "RESET_PIN_PROCESS",
+        "text": "CON Your PIN has been changed.\nPress 1 to continue.\n",
+        "next_menu_level": "MAIN",
+        "type": "dynamic",
+        "handler": "resetPinProcessMenuHandler",
+        "previous_menu_level": "MAIN"
+    },
+    "RESET_PIN_PROCESS_AO": {
+        "id": 230,
+        "menu_level": "RESET_PIN_PROCESS_AO",
+        "text": "CON Lakkofsi Iccitii keessan Jijjiirameera\nItti fufuuf lakkoofsa 1 tuqi. ",
+        "next_menu_level": "MAIN_AO",
+        "type": "dynamic",
+        "handler": "resetPinProcessMenuHandler_AO",
+        "previous_menu_level": "MAIN_AO"
+    },
+    "RESET_PIN_PROCESS_AM": {
+        "id": 230,
+        "menu_level": "RESET_PIN_PROCESS_AM",
+        "text": "CON የሚስጥር ቁጥርዎ ተቀይሯል\nለመቀጠል 1 ቁጥርን ይጫኑ",
+        "next_menu_level": "MAIN_AM",
+        "type": "dynamic",
+        "handler": "resetPinProcessMenuHandler_AM",
+        "previous_menu_level": "MAIN_AM"
+    },
+    "CHANGE_PIN" :{
+        "id": 20,
+        "menu_level": "CHANGE_PIN",
+        "type": "input",
+        "variable": "old_pin",
+        "text": "CON Change PIN\nPlease enter current PIN",
+        "next_menu_level": "CHANGE_PIN_NEW",
+        "validation": "^(\\d{4})$",
+        "validation_error": "Change PIN\nPlease enter a valid PIN",
+        "previous_menu_level": "START"
+    },
+
+    "CHANGE_PIN_AO" :{
+        "id": 20,
+        "menu_level": "CHANGE_PIN_AO",
+        "type": "input",
+        "variable": "old_pin",
+        "text": "CON Lakkoofsa iccitii Jijjiiruu\nLakkoofsa Iccitii Keessan isa ammaa galchaa",
+        "next_menu_level": "CHANGE_PIN_NEW_AO",
+        "validation": "^(\\d{4})$",
+        "validation_error": "Lakkoofsa iccitii Jijjiiruu\nLakkoofsa iccitii sirrii ta'e galchaa",
+        "previous_menu_level": "START_AO"
+    },
+    "CHANGE_PIN_AM" :{
+        "id": 20,
+        "menu_level": "CHANGE_PIN_AM",
+        "type": "input",
+        "variable": "old_pin",
+        "text": "CON የሚስጥር ቁጥርዎን ይቀይሩ\nእባክዎ የአሁኑ የሚስጥር ቁጥርዎን ያስገቡ ",
+        "next_menu_level": "CHANGE_PIN_NEW_AM",
+        "validation": "^(\\d{4})$",
+        "validation_error": "የሚስጥር ቁጥርዎን ይቀይሩ\nእባክዎ ትክክለኛ የሚስጥር ቁጥርዎን ያስገቡ",
+        "previous_menu_level": "START_AM"
+    },
+
+    "CHANGE_PIN_NEW" :{
+        "id": 20,
+        "menu_level": "CHANGE_PIN_NEW",
+        "type": "input",
+        "variable": "new_pin",
+        "text": "CON Change PIN\nPlease enter new PIN",
+        "next_menu_level": "CHANGE_PIN_NEW_CONFORMATION",
+        "validation": "^(\\d{4})$",
+        "validation_error": "Change PIN\nPlease enter a valid PIN",
+        "previous_menu_level": "START"
+    },
+    "CHANGE_PIN_NEW_CONFORMATION" :{
+        "id": 20,
+        "menu_level": "CHANGE_PIN_NEW_CONFORMATION",
+        "type": "input",
+        "variable": "conformation_pin",
+        "text": "CON Change PIN\nPlease enter Confirmation PIN",
+        "next_menu_level": "CHANGE_PIN_PROCESS",
+        "validation": "^(\\d{4})$",
+        "validation_error": "Change PIN\nPlease enter a valid Conformation PIN",
+        "previous_menu_level": "START"
+    },
+    "CHANGE_PIN_NEW_CONFORMATION_AO" :{
+        "id": 20,
+        "menu_level": "CHANGE_PIN_NEW_CONFORMATION_AO",
+        "type": "input",
+        "variable": "conformation_pin",
+        "text": "CON Mirkaneessa lakkoofsa iccitii galchaa",
+        "next_menu_level": "CHANGE_PIN_PROCESS_AO",
+        "validation": "^(\\d{4})$",
+        "validation_error": "Mirkaneessa lakkoofsa iccitii sirrii ta'e galchaa",
+        "previous_menu_level": "START_AO"
+    },
+    "CHANGE_PIN_NEW_CONFORMATION_AM" :{
+        "id": 20,
+        "menu_level": "CHANGE_PIN_NEW_CONFORMATION_AM",
+        "type": "input",
+        "variable": "conformation_pin",
+        "text": "CON እባክዎ የሚስጥር ቁጥር ማረጋገጫን ያስገቡ",
+        "next_menu_level": "CHANGE_PIN_PROCESS_AM",
+        "validation": "^(\\d{4})$",
+        "validation_error": "እባክዎ ትክክለኛ የሚስጥር ቁጥር ማረጋገጫን ያስገቡ",
+        "previous_menu_level": "START_AM"
+    },
+    "CHANGE_PIN_NEW_AO" :{
+        "id": 20,
+        "menu_level": "CHANGE_PIN_NEW_AO",
+        "type": "input",
+        "variable": "new_pin",
+        "text": "CON Lakk.Icciitii jijjiiruu\nLakk.Icciitii Keessan isa haaraa galchaa",
+        "next_menu_level": "CHANGE_PIN_NEW_CONFORMATION_AO",
+        "validation": "^(\\d{4})$",
+        "validation_error": "Lakk.Icciitii Jijjiiruu\nLakk.Icciitii sirrii ta'e galchaa ",
+        "previous_menu_level": "START_AO"
+    },
+    "CHANGE_PIN_NEW_AM" :{
+        "id": 20,
+        "menu_level": "CHANGE_PIN_NEW_AM",
+        "type": "input",
+        "variable": "new_pin",
+        "text": "CON የሚስጥር ቁጥርዎን ይቀይሩ\nእባክዎ አዲሱን የሚስጥር ቁጥርዎን ያስገቡ",
+        "next_menu_level": "CHANGE_PIN_NEW_CONFORMATION_AM",
+        "validation": "^(\\d{4})$",
+        "validation_error": "የሚስጥር ቁጥርዎን ይቀይሩ\nእባክዎ ትክክለኛ የሚስጥር ቁጥርዎን ያስገቡ",
+        "previous_menu_level": "START_AM"
+    },
+    "CHANGE_PIN_PROCESS": {
+        "id": 230,
+        "menu_level": "CHANGE_PIN_PROCESS",
+        "text": "CON Your PIN has been changed.\nPress 1 to continue.\n",
+        "next_menu_level": "START",
+        "type": "dynamic",
+        "handler": "changePinProcessMenuHandler",
+        "previous_menu_level": "MAIN"
+    },
+    "CHANGE_PIN_PROCESS_AO": {
+        "id": 230,
+        "menu_level": "CHANGE_PIN_PROCESS_AO",
+        "text": "CON Lakk.Icciitii keessan Jijjiirameera \nItti fufuuf lakkoofsa 1 tuqi. ",
+        "next_menu_level": "START_AO",
+        "type": "dynamic",
+        "handler": "changePinProcessMenuHandler_AO",
+        "previous_menu_level": "MAIN_AO"
+    },
+    "CHANGE_PIN_PROCESS_AM": {
+        "id": 230,
+        "menu_level": "CHANGE_PIN_PROCESS_AM",
+        "text": "CON የሚስጥር ቁጥርዎ ተቀይሯል፡፡\nለመቀጠል 1 ቁጥርን ይጫኑ",
+        "next_menu_level": "START_AM",
+        "type": "dynamic",
+        "handler": "changePinProcessMenuHandler_AM",
+        "previous_menu_level": "MAIN_AM"
+    },
+    "MAIN": {
+        "id": 230,
+        "menu_level": "MAIN",
+        "type" : "static",
+        "text": "CON Main Menu\n1. My Accounts\n2. Fund Transfer\n3. Mini Statement\n4. PIN Change\n5. Language Preferences\n0. Return to Main Menu",
+        "menu_options": [
+            {
+                "type": "level",
+                "response": null,
+                "error_message":null,
+                "next_menu_level": "ACCOUNT_LIST"
+            },
+            {
+                "type": "level",
+                "response": null,
+                "error_message":null,
+                "next_menu_level": "TRANSFERS"
+            },
+            {
+                "type": "level",
+                "response": null,
+                "error_message":null,
+                "next_menu_level": "STATEMENT"
+            },
+            {
+                "type": "level",
+                "response": null,
+                "error_message":null,
+                "next_menu_level": "CHANGE_PIN"
+            },
+
+            {
+                "type": "level",
+                "response": null,
+                "error_message":null,
+                "next_menu_level": "LANGUAGES"
+            }
+
+        ],
+        "max_selections": 5,
+        "previous_menu_level": "MAIN"
+    },
+    "MAIN_AO": {
+        "id": 230,
+        "menu_level": "MAIN_AO",
+        "type" : "static",
+        "text": "CON Baafata \n1. Herrega koo\n2. Maallaqa dabarsuu\n3. Sochii Herregaa Muraasa\n4. Lakk. Iccitii Jijjiruu\n5. Filannoo Afaanii\n0. Gara baafata duraatti deebi'i",
+        "menu_options": [
+            {
+                "type": "level",
+                "response": null,
+                "error_message":null,
+                "next_menu_level": "ACCOUNT_LIST_AO"
+            },
+            {
+                "type": "level",
+                "response": null,
+                "error_message":null,
+                "next_menu_level": "TRANSFERS_AO"
+            },
+            {
+                "type": "level",
+                "response": null,
+                "error_message":null,
+                "next_menu_level": "STATEMENT_AO"
+            },
+            {
+                "type": "level",
+                "response": null,
+                "error_message":null,
+                "next_menu_level": "CHANGE_PIN_AO"
+            },
+
+            {
+                "type": "level",
+                "response": null,
+                "error_message":null,
+                "next_menu_level": "LANGUAGES_AO"
+            }
+
+        ],
+        "max_selections": 5,
+        "previous_menu_level": "MAIN_AO"
+    },
+    "MAIN_AM": {
+        "id": 230,
+        "menu_level": "MAIN_AM",
+        "type" : "static",
+        "text": "CON ዋና መግቢያ\n1.ሒሳቤ\n2.ገንዘብ ማስተላለፍ\n3.አጭር የሒሳብ መግለጫ\n4.የሚስጥር ቁጥር ለመቀየር\n5.ቋንቋ መምረጥ\n0.ወደ ዋናው መግቢያ ለመመለስ",
+        "menu_options": [
+            {
+                "type": "level",
+                "response": null,
+                "error_message":null,
+                "next_menu_level": "ACCOUNT_LIST_AM"
+            },
+            {
+                "type": "level",
+                "response": null,
+                "error_message":null,
+                "next_menu_level": "TRANSFERS_AM"
+            },
+            {
+                "type": "level",
+                "response": null,
+                "error_message":null,
+                "next_menu_level": "STATEMENT_AM"
+            },
+            {
+                "type": "level",
+                "response": null,
+                "error_message":null,
+                "next_menu_level": "CHANGE_PIN_AM"
+            },
+
+            {
+                "type": "level",
+                "response": null,
+                "error_message":null,
+                "next_menu_level": "LANGUAGES_AM"
+            }
+
+        ],
+        "max_selections": 4,
+        "previous_menu_level": "MAIN_AM"
+    },
+    "TRANSFERS": {
+        "id": 230,
+        "menu_level": "TRANSFERS",
+        "type" : "static",
+        "text": "CON Transfer To:\n1. Own Account\n2. Other Account",
+        "menu_options": [
+            {
+                "type": "level",
+                "response": null,
+                "error_message":null,
+                "next_menu_level": "SFT_SOURCE"
+            },
+            {
+                "type": "level",
+                "response": null,
+                "error_message":null,
+                "next_menu_level": "OFT_SOURCE"
+            },
+            {
+                "type": "level",
+                "response": null,
+                "error_message":null,
+                "next_menu_level": "LFT_SOURCE"
+            },
+            {
+                "type": "level",
+                "response": null,
+                "error_message":null,
+                "next_menu_level": "BP_SOURCE"
+            },
+            {
+                "type": "level",
+                "response": null,
+                "error_message":null,
+                "next_menu_level": "TRANSFERS"
+            },
+            {
+                "type": "level",
+                "response": null,
+                "error_message":null,
+                "next_menu_level": "TRANSFERS"
+            }
+            
+        ],
+        "max_selections": 2,
+        "previous_menu_level": "MAIN"
+    },
+    "TRANSFERS_AO": {
+        "id": 230,
+        "menu_level": "TRANSFERS_AO",
+        "type" : "static",
+        "text": "CON kan dabarfamu :\n1. gara Herrega ofiitti\n2. gara Herrega Nama birootti\n*. Duubatti Deebi'I",
+        "menu_options": [
+            {
+                "type": "level",
+                "response": null,
+                "error_message":null,
+                "next_menu_level": "SFT_SOURCE_AO"
+            },
+            {
+                "type": "level",
+                "response": null,
+                "error_message":null,
+                "next_menu_level": "OFT_SOURCE_AO"
+            },
+            {
+                "type": "level",
+                "response": null,
+                "error_message":null,
+                "next_menu_level": "LFT_SOURCE_AO"
+            },
+            {
+                "type": "level",
+                "response": null,
+                "error_message":null,
+                "next_menu_level": "BP_SOURCE_AO"
+            },
+            {
+                "type": "level",
+                "response": null,
+                "error_message":null,
+                "next_menu_level": "TRANSFERS_AO"
+            },
+            {
+                "type": "level",
+                "response": null,
+                "error_message":null,
+                "next_menu_level": "TRANSFERS_AO"
+            }
+
+        ],
+        "max_selections": 2,
+        "previous_menu_level": "MAIN_AO"
+    },
+    "TRANSFERS_AM": {
+        "id": 230,
+        "menu_level": "TRANSFERS_AM",
+        "type" : "static",
+        "text": "CON ማስተላለፍ :\n1.ወደ ራስ ሒሳብ\n2.ወደ ሌለ ሰው ሒሳብ\n*.ተመለስ",
+        "menu_options": [
+            {
+                "type": "level",
+                "response": null,
+                "error_message":null,
+                "next_menu_level": "SFT_SOURCE_AM"
+            },
+            {
+                "type": "level",
+                "response": null,
+                "error_message":null,
+                "next_menu_level": "OFT_SOURCE_AM"
+            },
+            {
+                "type": "level",
+                "response": null,
+                "error_message":null,
+                "next_menu_level": "LFT_SOURCE_AM"
+            },
+            {
+                "type": "level",
+                "response": null,
+                "error_message":null,
+                "next_menu_level": "BP_SOURCE_AM"
+            },
+            {
+                "type": "level",
+                "response": null,
+                "error_message":null,
+                "next_menu_level": "TRANSFERS_AM"
+            },
+            {
+                "type": "level",
+                "response": null,
+                "error_message":null,
+                "next_menu_level": "TRANSFERS_AM"
+            }
+
+        ],
+        "max_selections": 2,
+        "previous_menu_level": "MAIN_AM"
+    },
+
+    "ACCOUNT_LIST": {
+        "id": 230,
+        "menu_level": "ACCOUNT_LIST",
+        "text": "CON My Accounts\n",
+        "next_menu_level": "ACCOUNT_LIST_DETAILS1",
+        "type": "dynamic",
+        "handler": "accountListMenuHandler",
+        "previous_menu_level": "MAIN"
+    },
+    "ACCOUNT_LIST_AO": {
+        "id": 230,
+        "menu_level": "ACCOUNT_LIST_AO",
+        "text": "CON Herrega koo\n",
+        "next_menu_level": "ACCOUNT_LIST_DETAILS1_AO",
+        "type": "dynamic",
+        "handler": "accountListMenuHandler_AO",
+        "previous_menu_level": "MAIN_AO"
+    },
+    "ACCOUNT_LIST_AM": {
+        "id": 230,
+        "menu_level": "ACCOUNT_LIST_AM",
+        "text": "CON ሒሳቤ\n",
+        "next_menu_level": "ACCOUNT_LIST_DETAILS1_AM",
+        "type": "dynamic",
+        "handler": "accountListMenuHandler_AM",
+        "previous_menu_level": "MAIN_AM"
+    },
+    "STATEMENT": {
+        "id": 230,
+        "menu_level": "STATEMENT",
+        "text": "CON My Accounts\n",
+        "next_menu_level": "TRANSACTION_LIST",
+        "type": "dynamic",
+        "handler": "accountListMenuHandler",
+        "previous_menu_level": "MAIN"
+    },
+    "STATEMENT_AO": {
+        "id": 230,
+        "menu_level": "STATEMENT_AO",
+        "text": "CON Herrega koo\n",
+        "next_menu_level": "TRANSACTION_LIST_AO",
+        "type": "dynamic",
+        "handler": "accountListMenuHandler_AO",
+        "previous_menu_level": "MAIN_AO"
+    },
+    "STATEMENT_AM": {
+        "id": 230,
+        "menu_level": "STATEMENT_AM",
+        "next_menu_level": "TRANSACTION_LIST_AM",
+        "type": "dynamic",
+        "handler": "accountListMenuHandler_AM",
+        "previous_menu_level": "MAIN_AM"
+    },
+    "ACCOUNT_LIST_DETAILS1": {
+        "id": 230,
+        "menu_level": "ACCOUNT_LIST_DETAILS1",
+        "text": "CON My Accounts\n",
+        "next_menu_level": "TRANSACTION_DETAILS",
+        "type": "dynamic",
+        "handler": "accountListDetailsHandler1",
+        "previous_menu_level": "ACCOUNT_LIST"
+    },
+    "ACCOUNT_LIST_DETAILS2": {
+        "id": 230,
+        "menu_level": "ACCOUNT_LIST_DETAILS2",
+        "text": "CON My Accounts\n",
+        "next_menu_level": "TRANSACTION_DETAILS",
+        "type": "dynamic",
+        "handler": "accountListDetailsHandler2",
+        "previous_menu_level": "ACCOUNT_LIST_DETAILS1"
+    },
+    "ACCOUNT_LIST_DETAILS1_AO": {
+        "id": 230,
+        "menu_level": "ACCOUNT_LIST_DETAILS1",
+        "text": "CON Herrega koo\n",
+        "next_menu_level": "TRANSACTION_DETAILS_AO",
+        "type": "dynamic",
+        "handler": "accountListDetailsHandler1_AO",
+        "previous_menu_level": "ACCOUNT_LIST_AO"
+    },
+    "ACCOUNT_LIST_DETAILS2_AO": {
+        "id": 230,
+        "menu_level": "ACCOUNT_LIST_DETAILS2_AO",
+        "text": "CON Herrega koo\n",
+        "next_menu_level": "TRANSACTION_DETAILS_AO",
+        "type": "dynamic",
+        "handler": "accountListDetailsHandler2_AO",
+        "previous_menu_level": "ACCOUNT_LIST_DETAILS1_AO"
+    },
+    "ACCOUNT_LIST_DETAILS1_AM": {
+        "id": 230,
+        "menu_level": "ACCOUNT_LIST_DETAILS1_AM",
+        "next_menu_level": "TRANSACTION_DETAILS_AM",
+        "type": "dynamic",
+        "handler": "accountListDetailsHandler1_AM",
+        "previous_menu_level": "ACCOUNT_LIST_AM"
+    },
+    "ACCOUNT_LIST_DETAILS2_AM": {
+        "id": 230,
+        "menu_level": "ACCOUNT_LIST_DETAILS2_AM",
+        "next_menu_level": "TRANSACTION_DETAILS_AM",
+        "type": "dynamic",
+        "handler": "accountListDetailsHandler2_AM",
+        "previous_menu_level": "ACCOUNT_LIST_DETAILS1_AM"
+    },
+    "ACCOUNT_DETAILS": {
+        "id": 230,
+        "menu_level": "ACCOUNT_DETAILS",
+        "type" : "static",
+        "text": "CON ${account_list_selected_account_name} - ${account_list_selected_account_id}\nAvailable balance: ${account_list_selected_account_currency} ${account_list_selected_account_balance}\n1. Mini Statement\n*. Account List\n0. Return to Main Menu",
+        "menu_options": [
+            {
+                "type": "level",
+                "response": null,
+                "error_message":null,
+                "next_menu_level": "TRANSACTION_LIST"
+            }],
+        "max_selections": 1,
+        "previous_menu_level": "ACCOUNT_LIST"
+    },
+    "ACCOUNT_DETAILS_AO": {
+        "id": 230,
+        "menu_level": "ACCOUNT_DETAILS_AO",
+        "type" : "static",
+        "text": "CON ${account_list_selected_account_name} - ${account_list_selected_account_id}\nHaftee Mallaqaa: ${account_list_selected_account_currency} ${account_list_selected_account_balance}\n1. Tarreefama herregaa muraasa\n*. Tarreeffama Herregaa\n0. Gara baafata duraatti deebi'i",
+        "menu_options": [
+            {
+                "type": "level",
+                "response": null,
+                "error_message":null,
+                "next_menu_level": "TRANSACTION_LIST_AO"
+            }],
+        "max_selections": 1,
+        "previous_menu_level": "ACCOUNT_LIST_AO"
+    },
+    "ACCOUNT_DETAILS_AM": {
+        "id": 230,
+        "menu_level": "ACCOUNT_DETAILS_AM",
+        "type" : "static",
+        "text": "CON ${account_list_selected_account_name} - ${account_list_selected_account_id}\nቀሪ ሒሳብ: ${account_list_selected_account_currency} ${account_list_selected_account_balance}\n1. አጭር መግለጫ\n*. የሂሳብ ዝርዝር\n0. ወደ ዋናው ለመመለስ",
+        "menu_options": [
+            {
+                "type": "level",
+                "response": null,
+                "error_message":null,
+                "next_menu_level": "TRANSACTION_LIST_AM"
+            }],
+        "max_selections": 1,
+        "previous_menu_level": "ACCOUNT_LIST_AM"
+    },
+    "TRANSACTION_LIST": {
+        "id": 230,
+        "menu_level": "TRANSACTION_LIST",
+        "next_menu_level": "TRANSACTION_DETAILS",
+        "type": "dynamic",
+        "handler": "transactionListMenuHandler",
+        "previous_menu_level": "ACCOUNT_LIST"
+    },
+    "TRANSACTION_LIST2": {
+        "id": 230,
+        "menu_level": "TRANSACTION_LIST2",
+        "next_menu_level": "TRANSACTION_DETAILS",
+        "type": "dynamic",
+        "handler": "transactionListMenuHandler2",
+        "previous_menu_level": "TRANSACTION_LIST"
+    },
+
+    "TRANSACTION_LIST_AO": {
+        "id": 230,
+        "menu_level": "TRANSACTION_LIST_AO",
+        "next_menu_level": "TRANSACTION_DETAILS_AO",
+        "type": "dynamic",
+        "handler": "transactionListMenuHandler_AO",
+        "previous_menu_level": "ACCOUNT_LIST_AO"
+    },
+    "TRANSACTION_LIST2_AO": {
+        "id": 230,
+        "menu_level": "TRANSACTION_LIST2_AO",
+        "next_menu_level": "TRANSACTION_DETAILS_AO",
+        "type": "dynamic",
+        "handler": "transactionListMenuHandler2_AO",
+        "previous_menu_level": "TRANSACTION_LIST_AO"
+    },
+    "TRANSACTION_LIST_AM": {
+        "id": 230,
+        "menu_level": "TRANSACTION_LIST_AM",
+        "next_menu_level": "TRANSACTION_DETAILS_AM",
+        "type": "dynamic",
+        "handler": "transactionListMenuHandler_AM",
+        "previous_menu_level": "ACCOUNT_LIST_AM"
+    },
+    "TRANSACTION_LIST2_AM": {
+        "id": 230,
+        "menu_level": "TRANSACTION_LIST2_AM",
+        "next_menu_level": "TRANSACTION_DETAILS_AM",
+        "type": "dynamic",
+        "handler": "transactionListMenuHandler2_AM",
+        "previous_menu_level": "TRANSACTION_LIST_AM"
+    },
+    "TRANSACTION_DETAILS": {
+        "id": 230,
+        "menu_level": "TRANSACTION_DETAILS",
+        "type" : "static",
+        "text": "CON Transaction Details\nDate: ${transaction_list_selected_transaction_date:-NA}\n${transaction_list_selected_transaction_narrative}\nAmount: ${transaction_list_selected_transaction_amount} ${transaction_list_selected_transaction_currency}\nRef: ${transaction_list_selected_transaction_id}\nPress * to return.\n0. Return to Main Menu",
+        "menu_options": [
+            {
+                "type": "level",
+                "response": null,
+                "error_message":null,
+                "next_menu_level": "SFT_PROCESS"
+            }],
+        "max_selections": 0,
+        "previous_menu_level": "TRANSACTION_LIST"
+    },
+    "TRANSACTION_DETAILS_AO": {
+        "id": 230,
+        "menu_level": "TRANSACTION_DETAILS_AO",
+        "type" : "static",
+        "text": "CON Tarreeffama herregaa\nGuyyaa: ${transaction_list_selected_transaction_date:-NA}\n${transaction_list_selected_transaction_narrative}\nHanga: ${transaction_list_selected_transaction_amount} ${transaction_list_selected_transaction_currency}\nRef: ${transaction_list_selected_transaction_id}\nDeebi'uuf * tuqi.\n0. Gara baafata duraatti deebi'i",
+        "menu_options": [
+            {
+                "type": "level",
+                "response": null,
+                "error_message":null,
+                "next_menu_level": "SFT_PROCESS_AO"
+            }],
+        "max_selections": 1,
+        "previous_menu_level": "TRANSACTION_LIST_AO"
+    },
+    "TRANSACTION_DETAILS_AM": {
+        "id": 230,
+        "menu_level": "TRANSACTION_DETAILS_AM",
+        "type" : "static",
+        "text": "CON የሒሳብ ዝርዝር\nቀን: ${transaction_list_selected_transaction_date:-NA}\nመጠን: ${transaction_list_selected_transaction_amount}\nመለያ: ${transaction_list_selected_transaction_id}\nለመመለስ * ይጫኑ.\n0.ወደ ዋናው ለመመለስ",
+        "menu_options": [
+            {
+                "type": "level",
+                "response": null,
+                "error_message":null,
+                "next_menu_level": "SFT_PROCESS_AM"
+            }],
+        "max_selections": 1,
+        "previous_menu_level": "TRANSACTION_LIST_AM"
+    },
+    "SFT_SOURCE": {
+        "id": 230,
+        "menu_level": "SFT_SOURCE",
+        "next_menu_level": "SFT_DESTINATION",
+        "type": "dynamic",
+        "handler": "selfTransferSourceMenuHandler",
+        "previous_menu_level": "TRANSFERS"
+    },
+    "SFT_SOURCE_AO": {
+        "id": 230,
+        "menu_level": "SFT_SOURCE_AO",
+        "next_menu_level": "SFT_DESTINATION_AO",
+        "type": "dynamic",
+        "handler": "selfTransferSourceMenuHandler_AO",
+        "previous_menu_level": "TRANSFERS_AO"
+    },
+    "SFT_SOURCE_AM": {
+        "id": 230,
+        "menu_level": "SFT_SOURCE_AM",
+        "next_menu_level": "SFT_DESTINATION_AM",
+        "type": "dynamic",
+        "handler": "selfTransferSourceMenuHandler_AM",
+        "previous_menu_level": "TRANSFERS_AM"
+    },
+    "SFT_DESTINATION": {
+        "id": 230,
+        "menu_level": "SFT_DESTINATION",
+        "next_menu_level": "SFT_AMOUNT",
+        "type": "dynamic",
+        "handler": "selfTransferDestinationMenuHandler",
+        "previous_menu_level": "SFT_SOURCE"
+    },
+    "SFT_DESTINATION_AO": {
+        "id": 230,
+        "menu_level": "SFT_DESTINATION_AO",
+        "next_menu_level": "SFT_AMOUNT_AO",
+        "type": "dynamic",
+        "handler": "selfTransferDestinationMenuHandler_AO",
+        "previous_menu_level": "SFT_SOURCE_AO"
+    },
+    "SFT_DESTINATION_AM": {
+        "id": 230,
+        "menu_level": "SFT_DESTINATION_AM",
+        "next_menu_level": "SFT_AMOUNT_AM",
+        "type": "dynamic",
+        "handler": "selfTransferDestinationMenuHandler_AM",
+        "previous_menu_level": "SFT_SOURCE_AM"
+    },
+    "SFT_AMOUNT" :{
+        "id": 20,
+        "menu_level": "SFT_AMOUNT",
+        "type": "input",
+        "variable": "sft_amount",
+        "text": "CON Self Funds Transfer (3/4)\nPlease enter the amount",
+        "next_menu_level": "SFT_CONFIRM",
+        "validation": "^(([1-9]\\d{0,2}(,\\d{3})*)|(([1-9]\\d*)?\\d))(\\.\\d\\d)?$",
+        "validation_error": "Self Funds Transfer (3/4)\nPlease enter a valid amount",
+        "previous_menu_level": "SFT_DESTINATION"
+    },
+    "SFT_AMOUNT_AO" :{
+        "id": 20,
+        "menu_level": "SFT_AMOUNT_AO",
+        "type": "input",
+        "variable": "sft_amount",
+        "text": "CON Mallaqa ofii daddabrsuu (3/4)\nhanga isaa galchaa",
+        "next_menu_level": "SFT_CONFIRM_AO",
+        "validation": "^(([1-9]\\d{0,2}(,\\d{3})*)|(([1-9]\\d*)?\\d))(\\.\\d\\d)?$",
+        "validation_error": "Mallaqa ofii daddabrsuu (3/4)\nhanga  sirrii ta'e galchaa",
+        "previous_menu_level": "SFT_DESTINATION_AO"
+    },
+    "SFT_AMOUNT_AM" :{
+        "id": 20,
+        "menu_level": "SFT_AMOUNT_AM",
+        "type": "input",
+        "variable": "sft_amount",
+        "text": "CON መጠኑን ያስገቡ",
+        "next_menu_level": "SFT_CONFIRM_AM",
+        "validation": "^(([1-9]\\d{0,2}(,\\d{3})*)|(([1-9]\\d*)?\\d))(\\.\\d\\d)?$",
+        "validation_error": "ትክክለኛውን መጠን ያስገቡ ",
+        "previous_menu_level": "SFT_DESTINATION_AM"
+    },
+    "SFT_CONFIRM": {
+        "id": 230,
+        "menu_level": "SFT_CONFIRM",
+        "type" : "static",
+        "text": "CON Confirm Transfer\nFrom: ${sft_source_account_name}\nTo: ${sft_dest_account_name}\nAmount: ${sft_amount} ETB\nPress 1 to confirm.\nPress 0 to cancel.",
+        "menu_options": [
+            {
+                "type": "level",
+                "response": null,
+                "error_message":null,
+                "next_menu_level": "SFT_PROCESS"
+            }],
+        "max_selections": 1
+    },
+    "SFT_CONFIRM_AO": {
+        "id": 230,
+        "menu_level": "SFT_CONFIRM_AO",
+        "type" : "static",
+        "text": "CON Daddabarsa Mirkaneessi\nirraa: ${sft_source_account_name}\nGuyyaa: ${sft_dest_account_name}\nHanga: ${sft_amount} ETB\nMirkaneessuuf 1 tuqi.\nhaquuf 0 tuqi.",
+        "menu_options": [
+            {
+                "type": "level",
+                "response": null,
+                "error_message":null,
+                "next_menu_level": "SFT_PROCESS_AO"
+            }],
+        "max_selections": 1
+    },
+    "SFT_CONFIRM_AM": {
+        "id": 230,
+        "menu_level": "SFT_CONFIRM_AM",
+        "type" : "static",
+        "text": "CON ማስተላለፍነር ያረጋግጡ\nከ: ${sft_source_account_name}\nወደ: ${sft_dest_account_name}\nመጠን: ${sft_amount}\n1.ለማረጋገጥ\n0.ለማቋረጥ",
+        "menu_options": [
+            {
+                "type": "level",
+                "response": null,
+                "error_message":null,
+                "next_menu_level": "SFT_PROCESS_AM"
+            }],
+        "max_selections": 1
+    },
+    "SFT_PROCESS": {
+        "id": 230,
+        "menu_level": "SFT_PROCESS",
+        "next_menu_level": "MAIN",
+        "type": "dynamic",
+        "handler": "selfTransferProcessMenuHandler",
+        "previous_menu_level": "MAIN",
+        "clear_session": true
+    },
+    "SFT_PROCESS_AO": {
+        "id": 230,
+        "menu_level": "SFT_PROCESS_AO",
+        "next_menu_level": "MAIN_AO",
+        "type": "dynamic",
+        "handler": "selfTransferProcessMenuHandler_AO",
+        "previous_menu_level": "MAIN_AO",
+        "clear_session": true
+    },
+    "SFT_PROCESS_AM": {
+        "id": 230,
+        "menu_level": "SFT_PROCESS_AM",
+        "next_menu_level": "MAIN_AM",
+        "type": "dynamic",
+        "handler": "selfTransferProcessMenuHandler_AM",
+        "previous_menu_level": "MAIN_AM",
+        "clear_session": true
+    },
+    "OFT_SOURCE": {
+        "id": 230,
+        "menu_level": "OFT_SOURCE",
+        "next_menu_level": "OFT_DESTINATION",
+        "type": "dynamic",
+        "handler": "otherTransferSourceMenuHandler",
+        "previous_menu_level": "TRANSFERS"
+    },
+    "OFT_SOURCE_AO": {
+        "id": 230,
+        "menu_level": "OFT_SOURCE_AO",
+        "next_menu_level": "OFT_DESTINATION_AO",
+        "type": "dynamic",
+        "handler": "otherTransferSourceMenuHandler_AO",
+        "previous_menu_level": "TRANSFERS_AO"
+    },
+    "OFT_SOURCE_AM": {
+        "id": 230,
+        "menu_level": "OFT_SOURCE_AM",
+        "next_menu_level": "OFT_DESTINATION_AM",
+        "type": "dynamic",
+        "handler": "otherTransferSourceMenuHandler_AM",
+        "previous_menu_level": "TRANSFERS_AM"
+    },
+    "OFT_DESTINATION": {
+        "id": 230,
+        "menu_level": "OFT_DESTINATION",
+        "next_menu_level": "OFT_DESTINATION_LOOKUP",
+        "type": "input",
+        "variable": "oft_dest_account_id",
+        "text": "CON Other Funds Transfer (2/4)\n\nPlease enter 13 digit\nrecipient account number",
+        "validation": "^\\d+?$",
+        "validation_error": "Other Funds Transfer (2/5)\nPlease enter a valid account number",
+        "previous_menu_level": "OFT_SOURCE"
+    },
+    "OFT_DESTINATION_AO": {
+        "id": 230,
+        "menu_level": "OFT_DESTINATION_AO",
+        "next_menu_level": "OFT_DESTINATION_LOOKUP_AO",
+        "type": "input",
+        "variable": "oft_dest_account_id",
+        "text": "CON Mallaqa nama biroof daddabarsuu (2/4)\nlakkofsa herrega nama mallaqa ergamuuf\nDijitii 13 galchi",
+        "validation": "^\\d+?$",
+        "validation_error": "Mallaqa nama biroof daddabarsuu (2/5)\nlakkoofsa herregaa sirrii ta'e galchaa",
+        "previous_menu_level": "OFT_SOURCE_AO"
+    },
+    "OFT_DESTINATION_AM": {
+        "id": 230,
+        "menu_level": "OFT_DESTINATION_AM",
+        "next_menu_level": "OFT_DESTINATION_LOOKUP_AM",
+        "type": "input",
+        "variable": "oft_dest_account_id",
+        "text": "CON እባክዎ የሚላክለት ሰው ሂሳብ ቁጥር 13 አኃዝ ያስገቡ",
+        "validation": "^\\d+?$",
+        "validation_error": "እባክዎ ትክክለኛውን የሒሳብ ቁጥር ያስገቡ",
+        "previous_menu_level": "OFT_SOURCE_AM"
+    },
+    "OFT_DESTINATION_LOOKUP": {
+        "id": 230,
+        "menu_level": "OFT_DESTINATION_LOOKUP",
+        "next_menu_level": "OFT_AMOUNT",
+        "type": "dynamic",
+        "handler": "otherTransferDestinationLookupMenuHandler",
+        "previous_menu_level": "OFT_DESTINATION"
+    },
+    "OFT_DESTINATION_LOOKUP_AO": {
+        "id": 230,
+        "menu_level": "OFT_DESTINATION_LOOKUP_AO",
+        "next_menu_level": "OFT_AMOUNT_AO",
+        "type": "dynamic",
+        "handler": "otherTransferDestinationLookupMenuHandler_AO",
+        "previous_menu_level": "OFT_DESTINATION_AO"
+    },
+    "OFT_DESTINATION_LOOKUP_AM": {
+        "id": 230,
+        "menu_level": "OFT_DESTINATION_LOOKUP_AM",
+        "next_menu_level": "OFT_AMOUNT_AM",
+        "type": "dynamic",
+        "handler": "otherTransferDestinationLookupMenuHandler_AM",
+        "previous_menu_level": "OFT_DESTINATION_AM"
+    },
+    "OFT_AMOUNT" :{
+        "id": 20,
+        "menu_level": "OFT_AMOUNT",
+        "type": "input",
+        "variable": "oft_amount",
+        "text": "CON Other Funds Transfer (4/4)\nPlease enter the amount",
+        "next_menu_level": "OFT_REASON",
+        "validation": "^(([1-9]\\d{0,2}(,\\d{3})*)|(([1-9]\\d*)?\\d))(\\.\\d\\d)?$",
+        "validation_error": "Other Funds Transfer (4/5)\nPlease enter a valid amount",
+        "previous_menu_level": "OFT_DESTINATION_LOOKUP"
+    },
+
+    "OFT_AMOUNT_AO" :{
+        "id": 20,
+        "menu_level": "OFT_AMOUNT_AO",
+        "type": "input",
+        "variable": "oft_amount",
+        "text": "CON Mallaqa nama biroof daddabarsuu (4/4)\nHanga isaa galchaa",
+        "next_menu_level": "OFT_REASON_AO",
+        "validation": "^(([1-9]\\d{0,2}(,\\d{3})*)|(([1-9]\\d*)?\\d))(\\.\\d\\d)?$",
+        "validation_error": "Mallaqa nama biroof daddabarsuu (4/5)\nHanga sirrii ta'e  galchaa ",
+        "previous_menu_level": "OFT_DESTINATION_LOOKUP_AO"
+    },
+    "OFT_AMOUNT_AM" :{
+        "id": 20,
+        "menu_level": "OFT_AMOUNT_AM",
+        "type": "input",
+        "variable": "oft_amount",
+        "text": "CON እባክዎ መጠኑን ያገቡ",
+        "next_menu_level": "OFT_REASON_AM",
+        "validation": "^(([1-9]\\d{0,2}(,\\d{3})*)|(([1-9]\\d*)?\\d))(\\.\\d\\d)?$",
+        "validation_error": "Other እባክዎ ትክክለኛ መጠኑን ያገቡ",
+        "previous_menu_level": "OFT_DESTINATION_LOOKUP_AM"
+    },
+    "OFT_REASON" :{
+        "id": 20,
+        "menu_level": "OFT_REASON",
+        "type": "input",
+        "variable": "oft_reason",
+        "text": "CON Other Funds Transfer (5/5)\nPlease enter the reason",
+        "next_menu_level": "OFT_CONFIRM",
+        "validation":"^.+?$",
+        "validation_error":"Other Funds Transfer (4/4)\nPlease enter the reason",
+        "previous_menu_level": "OFT_AMOUNT"
+    },
+    "OFT_REASON_AO" :{
+        "id": 20,
+        "menu_level": "OFT_REASON_AO",
+        "type": "input",
+        "variable": "oft_reason",
+        "text": "CON Mallaqa nama biroof daddabarsuu (5/5)\nSababa kaffaltii galchaa",
+        "next_menu_level": "OFT_CONFIRM_AO",
+        "validation":"^.+?$",
+        "validation_error":"Mallaqa nama biroof daddabarsuu (4/4)\nSababa kaffaltii galchaa",
+        "previous_menu_level": "OFT_AMOUNT_AO"
+    },
+    "OFT_REASON_AM" :{
+        "id": 20,
+        "menu_level": "OFT_REASON_AM",
+        "type": "input",
+        "variable": "oft_reason",
+        "text": "CON የክፍያ ምክንያት ያስገቡ",
+        "next_menu_level": "OFT_CONFIRM_AM",
+        "validation":"^.+?$",
+        "validation_error":"የክፍያ ምክንያት ያስገቡ",
+        "previous_menu_level": "OFT_AMOUNT_AM"
+    },
+    "OFT_CONFIRM": {
+        "id": 230,
+        "menu_level": "OFT_CONFIRM",
+        "type" : "static",
+        "text": "CON Confirm Transfer\nFrom: ${oft_source_account_name}\nTo: ${oft_dest_account_name}\nAmount: ${oft_amount} ETB\nReason: ${oft_reason}\nPress 1 to confirm.\nPress 0 to cancel.",
+        "menu_options": [
+            {
+                "type": "level",
+                "response": null,
+                "error_message":null,
+                "next_menu_level": "OFT_PROCESS"
+            }],
+        "max_selections": 1,
+        "previous_menu_level": "OFT_AMOUNT"
+    },
+    "OFT_CONFIRM_AO": {
+        "id": 230,
+        "menu_level": "OFT_CONFIRM_AO",
+        "type" : "static",
+        "text": "CON Daddabarsa Mirkaneessi\nirraa: ${oft_source_account_name}\nGuyyaa: ${oft_dest_account_name}\nHanga: ${oft_amount} ETB\nSababa: ${oft_reason}\nMirkaneessuuf 1 tuqi.\nhaquuf 0 tuqi.",
+        "menu_options": [
+            {
+                "type": "level",
+                "response": null,
+                "error_message":null,
+                "next_menu_level": "OFT_PROCESS_AO"
+            }],
+        "max_selections": 1,
+        "previous_menu_level": "OFT_AMOUNT_AO"
+    },
+    "OFT_CONFIRM_AM": {
+        "id": 230,
+        "menu_level": "OFT_CONFIRM_AM",
+        "type" : "static",
+        "text": "CON ማስተላለፍ ያረጋግጡ\nከ: ${oft_source_account_name}\nወደ: ${oft_dest_account_name}\nመጠን: ${oft_amount}\n1.ለማረጋገጥ\n0.ለማቋረጥ",
+        "menu_options": [
+            {
+                "type": "level",
+                "response": null,
+                "error_message":null,
+                "next_menu_level": "OFT_PROCESS_AM"
+            }],
+        "max_selections": 1,
+        "previous_menu_level": "OFT_AMOUNT_AM"
+    },
+    "OFT_PROCESS": {
+        "id": 230,
+        "menu_level": "OFT_PROCESS",
+        "next_menu_level": "MAIN",
+        "type": "dynamic",
+        "handler": "otherTransferProcessMenuHandler",
+        "previous_menu_level": "MAIN",
+        "clear_session": true
+    },
+    "OFT_PROCESS_AO": {
+        "id": 230,
+        "menu_level": "OFT_PROCESS_AO",
+        "next_menu_level": "MAIN_AO",
+        "type": "dynamic",
+        "handler": "otherTransferProcessMenuHandler_AO",
+        "previous_menu_level": "MAIN_AO",
+        "clear_session": true
+    },
+    "OFT_PROCESS_AM": {
+        "id": 230,
+        "menu_level": "OFT_PROCESS_AM",
+        "next_menu_level": "MAIN_AM",
+        "type": "dynamic",
+        "handler": "otherTransferProcessMenuHandler_AM",
+        "previous_menu_level": "MAIN_AM",
+        "clear_session": true
+    },
+    "LANGUAGES_PROCESS": {
+        "id": 230,
+        "menu_level": "LANGUAGES_PROCESS",
+        "type" : "dynamic",
+        "text": "CON Your Language has been changed.\nPress 1 to continue.",
+        "handler": "languageProcessMenuHandler",
+        "next_menu_level": "MAIN",
+        "previous_menu_level": "LANGUAGES"
+    },
+    "LANGUAGES_PROCESS_AO": {
+        "id": 230,
+        "menu_level": "LANGUAGES_PROCESS_AO",
+        "type" : "dynamic",
+        "text": "CON Afaan keessan Jijjiirameera\nItti fufuuf lakkoofsa 1 tuqi.",
+        "handler": "languageProcessMenuHandler_AO",
+        "next_menu_level": "MAIN_AO",
+        "previous_menu_level": "LANGUAGES"
+    },
+    "LANGUAGES_PROCESS_AM": {
+        "id": 230,
+        "menu_level": "LANGUAGES_PROCESS_AM",
+        "type" : "dynamic",
+        "text": "CON ቋንቋ ተቀይሯል፡፡\nለመቀጠል 1 ቁጥርን ይጫኑ\n",
+        "handler": "languageProcessMenuHandler_AM",
+        "next_menu_level": "MAIN_AM",
+        "previous_menu_level": "LANGUAGES"
+    },
+    "LANGUAGES": {
+        "id": 230,
+        "menu_level": "LANGUAGES",
+        "type" : "static",
+        "text": "CON Languages\nFilannoo Afaanii\nቋንቋ ለመቀየር\n1.English\n2.Afaan Oromoo\n3.Amharic",
+        "menu_options": [
+            {
+                "type": "level",
+                "response": null,
+                "error_message":null,
+                "next_menu_level": "LANGUAGES_PROCESS"
+            },
+            {
+                "type": "level",
+                "response": null,
+                "error_message":null,
+                "next_menu_level": "LANGUAGES_PROCESS_AO"
+            },
+            {
+                "type": "level",
+                "response": null,
+                "error_message":null,
+                "next_menu_level": "LANGUAGES_PROCESS_AM"
+            }
+        ],
+        "max_selections": 3,
+        "previous_menu_level": "MAIN"
+    },
+    "LANGUAGES_AO": {
+        "id": 230,
+        "menu_level": "LANGUAGES_AO",
+        "type" : "static",
+        "text": "CON Languages\nFilannoo Afaanii\nቋንቋ ለመቀየር\n1.English\n2.Afaan Oromoo\n3.Amharic",
+        "menu_options": [
+            {
+                "type": "level",
+                "response": null,
+                "error_message":null,
+                "next_menu_level": "LANGUAGES_PROCESS"
+            },
+            {
+                "type": "level",
+                "response": null,
+                "error_message":null,
+                "next_menu_level": "LANGUAGES_PROCESS_AO"
+            },
+            {
+                "type": "level",
+                "response": null,
+                "error_message":null,
+                "next_menu_level": "LANGUAGES_PROCESS_AM"
+            }
+        ],
+        "max_selections": 3,
+        "previous_menu_level": "MAIN_AO"
+    },
+    "LANGUAGES_AM": {
+        "id": 230,
+        "menu_level": "LANGUAGES_AM",
+        "type" : "static",
+        "text": "CON Languages\nFilannoo Afaanii\nቋንቋ ለመቀየር:\n1.English\n2.Afaan Oromoo\n3.Amharic",
+        "menu_options": [
+            {
+                "type": "level",
+                "response": null,
+                "error_message":null,
+                "next_menu_level": "LANGUAGES_PROCESS"
+            },
+            {
+                "type": "level",
+                "response": null,
+                "error_message":null,
+                "next_menu_level": "LANGUAGES_PROCESS_AO"
+            },
+            {
+                "type": "level",
+                "response": null,
+                "error_message":null,
+                "next_menu_level": "LANGUAGES_PROCESS_AM"
+            }
+        ],
+        "max_selections": 3,
+        "previous_menu_level": "MAIN_AM"
+    },
+    "LANGUAGES_LOGIN": {
+        "id": 230,
+        "menu_level": "LANGUAGES_LOGIN",
+        "type" : "dynamic",
+        "handler": "loginLanguageHandler",
+        "next_menu_level": "START"
+    },
+    "LANGUAGES_LOGIN_X": {
+        "id": 230,
+        "menu_level": "LANGUAGES_LOGIN",
+        "type" : "static",
+        "text": "CON Welcome to Gadaa Bank USSD platform\nLanguage Preferences\nFilannoo Afaanii\nቋንቋ መምረጥ\n1.English\n2.Afaan Oromoo\n3.አማርኛ",
+        "menu_options": [
+            {
+                "type": "level",
+                "response": null,
+                "error_message":null,
+                "next_menu_level": "START"
+            },
+            {
+                "type": "level",
+                "response": null,
+                "error_message":null,
+                "next_menu_level": "START_AO"
+            },
+            {
+                "type": "level",
+                "response": null,
+                "error_message":null,
+                "next_menu_level": "START_AM"
+            }
+        ],
+        "max_selections": 3
+    }
+}
